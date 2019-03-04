@@ -5,14 +5,9 @@ var passwordinput = document.getElementById("passwordinput");
 
 usernameinput.addEventListener("input", function(e){
     console.log(e);
-    username.innerHTML = 'y'
+    username.innerHTML = usernameinput.value
 });
 			       
 passwordinput.addEventListener("input", function(e){
-    password.innerHTML = 'y';
-});
-
-var button = document.getElementById("but")
-button.addEventListener("onclick", function(e){
-    console.log(e)
+    password.innerHTML = passwordinput.value
 });
