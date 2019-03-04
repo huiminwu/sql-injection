@@ -3,12 +3,12 @@ var password = document.getElementById("pass");
 var usernameinput = document.getElementById("usernameinput");
 var passwordinput = document.getElementById("passwordinput");
 
-usernameinput.addEventListener("oninput", function(e){
+usernameinput.addEventListener("input", function(e){
     console.log(e);
     username.innerHTML = 'y'
 });
 			       
-passwordinput.addEventListener("oninput", function(e){
+passwordinput.addEventListener("input", function(e){
     password.innerHTML = 'y';
 });
 
