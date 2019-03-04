@@ -11,3 +11,8 @@ usernameinput.addEventListener("oninput", function(e){
 passwordinput.addEventListener("oninput", function(e){
     password.innerHTML = 'y';
 });
+
+var button = document.getElementById("but")
+button.addEventListener("onclick", function(e){
+    console.log(e)
+});
