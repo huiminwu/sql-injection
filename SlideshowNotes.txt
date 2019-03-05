@@ -1,0 +1,124 @@
+SQL Injection attacks are the most ubiquitous attack on web apps.
+The basic ones are relatively easy to do and exploit
+
+By nature, web applications that require text input, such as logging in, have to be able to access the database to read and write information.
+Akin to a firewall having openings for programs to communicate to the outside world
+
+However, rather than entering typical user credentials into the web application, a user may enter SQL code as the text input instead.
+Manipulates the original SQL command
+
+Unchecked, the new SQL command can wreak havoc.
+If improperly checked, this “SQL injection” may cause much damage to the hacker’s bidding.
+
+----------------------------------------
+
+Modify database information
+Changing values within the database; making its data unreliable
+
+Gain administrative privileges
+Allowing the user to execute acts that would otherwise need administrative credentials to perform
+
+Delete entire database tables or corrupt data
+Users can seek to do massive damage when they invoke the DROP <table_name> SQL command or corrupt the data in other ways
+
+Attack other related online services one provides
+Knowing the vulnerabilities of one service can grant the attacker enough access/information to attack one’s other services
+
+Procure sensitive information
+Once in, the attacker could (perhaps with relative ease), have the application return sensitive information
+
+Destroy backup files
+If the destruction of data is possible, it is likely that backups can be destroyed as well (if they are not kept in a safe manner)
+
+-----------------------------------------
+
+The nature of one’s business is lucrative
+Although SQL Injection can be done with any web application with text inputs that lead to a database, the risk factor increases as the web application rises in prominence.
+
+Think: who are the hackers are going to be more likely to target?
+Your SoftDev project or credit card companies?
+
+Web application is large, but is not updated/patched often
+A larger web application means that the possibility exists to be more vulnerabilities, especially if patches and updates are not rolling out fast enough.
+
+If a web application is not regularly being fixed, then don’t be surprised if hacks are successful.
+
+Insufficient checks
+Sanitization of user inputs is very important because you want to make sure user input is minimized to the point where their inputted data cannot affect the database.
+
+Without enough checks, harmful SQL commands can just breeze by with relative ease.
+
+-----------------------------------------
+
+Heartland:
+160 million credit cards exposed + sold on the dark web
+Hackers were able to access databases and upload malware that led to $300 million dollars in damages
+
+Lauri Love
+Allegedly stole data from US agencies
+Had plans to scan IP addresses for vulnerable servers, which he would then use to inject SQL commands with into sites’ backend databases
+
+-----------------------------------------
+
+There are many types of SQL Injection, but three prominent categorizations are:
+Error based
+Union based
+Inferential (aka blind)
+
+-----------------------------------------
+
+Error based injection forces the web application to throw out SQL errors
+In doing so, attacker learns information about the database structure and whatnot
+
+Ways to invoke possible errors:
+Malicious queries
+Comment Line
+Tautology
+
+-----------------------------------------
+
+Union based SQL injection allows user to add their own command
+
+Can work with many, many things such as:
+INSERT…
+DELETE…
+SELECT...
+
+-----------------------------------------
+
+True or False Questions
+Sends a series of true and false questions to get correct queries
+Must enumerate through all possibilities so it’s very time consuming
+
+Time Delays:
+http://www.sqlinjection.net/time-based/
+If you use the sleep or benchmark command in your query, and the reload time is quite long, that means the system is vulnerable.
+If it is vulnerable, you can set a conditional to delay if true, so a common result is discovering the system version of a machine
+
+-----------------------------------------
+
+Sanitize user input first
+Make sure that illegal characters cannot be inputted
+
+Use parameters
+This ensures that the string is treated as a string in its entirety
+e.g. making sure the input 1 = 1 is treated as ‘1 = 1’
+
+Avoid dynamic SQL as much as possible
+The more dynamic your code is, the more susceptible it is
+
+Hiding error messages
+So then your attacker cannot glean as much information
+
+-----------------------------------------
+
+Important things to point out:
+Apostrophes end strings early
+Using expressions that are always true
+Commenting out the rest of the SQL command
+
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+https://github.com/huiminwu/sql-injection
+
+HTTP clone:
+https://github.com/huiminwu/sql-injection.git
