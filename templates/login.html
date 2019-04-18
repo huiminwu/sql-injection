@@ -6,6 +6,13 @@
     <hr>
   </head>
   <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <center>
       <form action="/auth" method="POST">
 	Username: <input type="text" name="username" id="usernameinput"><br>

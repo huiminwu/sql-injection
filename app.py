@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, url_for, redirect
+from flask import Flask, render_template, request, session, url_for, redirect, flash
 import os
 import sqlite3
 
@@ -12,16 +12,8 @@ c.execute("CREATE TABLE IF NOT EXISTS users (name TEXT, pwd TEXT)")
 db.commit()
 db.close()
 
-@app.route('/home')
-def home():
-    return render_template('home.html')
-
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/login')
-def login():
     return render_template('login.html')
 
 @app.route('/auth', methods = ['POST'])
@@ -35,8 +27,10 @@ def auth():
     print(fetched)
     for result in fetched:
         if result[0] == 1:
-            return redirect(url_for('home'))
-    return redirect(url_for('login'))
+            flash("Congrats! You cracked the system!")
+            return redirect(url_for('index'))
+    flash("Try again!")
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.debug = True
