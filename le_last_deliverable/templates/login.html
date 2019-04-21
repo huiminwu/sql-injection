@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>SQL Injection</title>
     <h1 style="text-align:center;margin-bottom:0px">SQL Injection (by Period 8's Team uWu)</h1>
     <h4 style="text-align:center;margin-top:0px">Hui Min Wu and Thomas Zhao</h4>
@@ -23,56 +23,83 @@
         padding-right: 80px;
         text-align:justify;
     }
+
+    .answer-list {
+        font-size: 18px;
+        margin-bottom: 30px;
+        padding-left: 120px;
+    }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-      <p class="question">
-          Hey uWu, what is SQL Injection?
-      </p>
-      <p class="answer">
-          SQL Injection is the act of "injecting" SQL queries to manipulate web applications. These are important to guard against because they
-          are an ubiquitous attack on the Interwebs due to their relative simplicity to perform, and the volume of web applications that are
-          vulnerable to said attack. SQL Injection attacks thrive on text input fields, which nowadays the majority of websites possess.
-          Text input fields are generally connected to a database so that the input can somehow be used to procure some sort of result. One
-          would use SQL code to access and compare the input and stored data in the database. If someone typed in SQL code as the input (hence
-          "SQL Injection"), it could potentially alter the original SQL query into a malicious one capable of performing whatever action the
-          attacker sees fit.
-      </p>
+    <p class="question">
+        Hey uWu, what is SQL Injection?
+    </p>
+    <p class="answer">
+        SQL Injection is the act of "injecting" SQL queries to manipulate web applications. These are important to guard against because they
+        are an ubiquitous attack on the Interwebs due to their relative simplicity to perform, and the volume of web applications that are
+        vulnerable to said attack. SQL Injection attacks thrive on text input fields, which nowadays the majority of websites possess.
+        Text input fields are generally connected to a database so that the input can somehow be used to procure some sort of result. One
+        would use SQL code to access and compare the input and stored data in the database. If someone typed in SQL code as the input (hence
+        "SQL Injection"), it could potentially alter the original SQL query into a malicious one capable of performing whatever action the
+        attacker sees fit.
+    </p>
 
-      <p class="question">
-          Hmm, interesting. I still don't see how bad SQL Injection can be though.
-      </p>
-      <p class="answer">
-          Giving attackers the potential to gain unparalleled power in YOUR web application? That is terrible and is something that should
-          never happen. Though severity varies depending on how the SQL backend code is structured, just the mere thought of a foreign
-          entity being able to access YOUR web application, use it to their benefit, and even destroy it should scare you. If you are still
-          not convinced, potential consequences of negligence are:
-          <ul style="font-size:17px;margin-bottom:30px;padding-left:120px">
-              <li>Modify database information (and destroy integrity of your web application!)</li>
-              <li>Gain administrative priviledges (and even usurp your throne!)</li>
-              <li>Delete entire database tables or corrupt data (sound bad yet?)</li>
-              <li>Attack other related online services one provides (and bring your empire crashing down!)</li>
-              <li>Procure sensetive information (and now your secrets are exposed!)</li>
-              <li>Destroy even backup files (so you are done for... no coming back from this)</li>
-          </ul>
-      </p>
+    <p class="question">
+        Hmm, interesting. I still don't see how bad SQL Injection can be though.
+    </p>
+    <p class="answer">
+        Giving attackers the potential to gain unparalleled power in YOUR web application? That is terrible and is something that should
+        never happen. Though severity varies depending on how the SQL backend code is structured, just the mere thought of a foreign
+        entity being able to access YOUR web application, use it to their benefit, and even destroy it should scare you. If you are still
+        not convinced, potential consequences of negligence are:
+        <ul class="answer-list">
+            <li>Modify database information (and destroy integrity of your web application!).</li>
+            <li>Gain administrative priviledges (and even usurp your throne!).</li>
+            <li>Delete entire database tables or corrupt data (sound bad yet?).</li>
+            <li>Attack other related online services one provides (and bring your empire crashing down!).</li>
+            <li>Procure sensetive information (and now your secrets are exposed!).</li>
+            <li>Destroy even backup files (you are so done for... no coming back from this).</li>
+        </ul>
+    </p>
 
-      
+    <p class="question">
+        Okay, that sounds pretty terrifying. How do I know if I'll be attacked?
+    </p>
+    <p class="answer">
+        Well, you see, you don't know for sure. But it is likely because again SQL Injection attacks are extremely common on the
+        Interwebs. However, there are some factors that will put you more at risk than others (some of which can control, some of
+        which you cannot). Some factors that put you at a greater risk are listed below:
+        <ul class="answer-list">
+            <li>Your business is more lucrative to attack (someone would rather attack MasterCard than, let's say, your SoftDev project).</li>
+            <li>Your web application is large, but is not updated or patched often.</li>
+            <li>There are insufficient checks on invalid user inputs that would prevent nefarious activities on your web application.</li>
+        </ul>
+    </p>
+
+    <p class="question">
+        Wow. Just wow. Has this attack been successful in years past?
+    </p>
+    <p class="answer">
+        Why, of course! Otherwise, why would we stress the dangers of succumbing to SQL Injection? There have been numerous examples
+        down the long roads of history; here are a couple of notable cases that have emerged in (relatively) recent years.
+    </p>
+
 
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                {{message}}
-            {% endfor %}
-        {% endif %}
+    {% if messages %}
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    {% endif %}
     {% endwith %}
     <center>
-      <form action="/auth" method="POST">
-	Username: <input type="text" name="username" id="usernameinput"><br>
-	Password: <input type="text" name="password" id="passwordinput"><br>
-	<button type="submit">Login</button>
-      </form>
+        <form action="/auth" method="POST">
+            Username: <input type="text" name="username" id="usernameinput"><br>
+            Password: <input type="text" name="password" id="passwordinput"><br>
+            <button type="submit">Login</button>
+        </form>
     </center>
 
     <br><br>
@@ -107,5 +134,5 @@
     <text style="font-size:20px;font-family:Lucida Console;margin-left:0px">'</text>
 
     <script src="../static/showSQLcmd.js"></script>
-  </body>
+</body>
 </html>
