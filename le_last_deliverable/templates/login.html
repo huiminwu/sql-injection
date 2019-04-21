@@ -29,6 +29,49 @@
         margin-bottom: 30px;
         padding-left: 120px;
     }
+
+    /* Tooltip container */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        width: 120px;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    }
+
+    .tooltip .tooltiptext::after {
+        content: " ";
+        position: absolute;
+        top: 100%; /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+
     </style>
 </head>
 <body>
@@ -55,12 +98,43 @@
         entity being able to access YOUR web application, use it to their benefit, and even destroy it should scare you. If you are still
         not convinced, potential consequences of negligence are:
         <ul class="answer-list">
-            <li>Modify database information (and destroy integrity of your web application!).</li>
-            <li>Gain administrative priviledges (and even usurp your throne!).</li>
-            <li>Delete entire database tables or corrupt data (sound bad yet?).</li>
-            <li>Attack other related online services one provides (and bring your empire crashing down!).</li>
-            <li>Procure sensetive information (and now your secrets are exposed!).</li>
-            <li>Destroy even backup files (you are so done for... no coming back from this).</li>
+
+            <li id="consequence-1">
+                <div class="tooltip">
+                    Modify database information (and destroy integrity of your web application!).
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="consequence-2">
+                <div class="tooltip">
+                    Gain administrative priviledges (and even usurp your throne!).
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="consequence-3">
+                <div class="tooltip">
+                    Delete entire database tables or corrupt data (sound bad yet?).
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="consequence-4">
+                <div class="tooltip">
+                    Attack other related online services one provides (and bring your empire crashing down!).
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="consequence-5">
+                <div class="tooltip">
+                    Procure sensitive information (and now your secrets are exposed!)
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="consequence-6">
+                <div class="tooltip">
+                    Destroy even backup files (you are so done for... no coming back from this).
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
         </ul>
     </p>
 
@@ -72,9 +146,27 @@
         Interwebs. However, there are some factors that will put you more at risk than others (some of which can control, some of
         which you cannot). Some factors that put you at a greater risk are listed below:
         <ul class="answer-list">
-            <li>Your business is more lucrative to attack (someone would rather attack MasterCard than, let's say, your SoftDev project).</li>
-            <li>Your web application is large, but is not updated or patched often.</li>
-            <li>There are insufficient checks on invalid user inputs that would prevent nefarious activities on your web application.</li>
+
+            <li id="risk-1">
+                <div class="tooltip">
+                    Your business is more lucrative to attack (someone would rather attack MasterCard than, let's say, your SoftDev project).
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+
+            <li id="risk-2">
+                <div class="tooltip">
+                    Your web application is large, but is not updated or patched often.
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+
+            <li id="risk-3">
+                <div class="tooltip">
+                    There are insufficient checks on invalid user inputs that would prevent nefarious activities on your web application.
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
         </ul>
     </p>
 
@@ -84,55 +176,69 @@
     <p class="answer">
         Why, of course! Otherwise, why would we stress the dangers of succumbing to SQL Injection? There have been numerous examples
         down the long roads of history; here are a couple of notable cases that have emerged in (relatively) recent years.
+        <ul class="answer-list">
+            <li id="past-1">
+                <div class="tooltip">
+                    "Largest Ever Hacking Fraud Case", 2013
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="past-2">
+                <div class="tooltip">
+                    "Lauri Love", 2013
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+        </ul>
     </p>
 
 
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    {{message}}
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-    <center>
-        <form action="/auth" method="POST">
-            Username: <input type="text" name="username" id="usernameinput"><br>
-            Password: <input type="text" name="password" id="passwordinput"><br>
-            <button type="submit">Login</button>
-        </form>
-    </center>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <center>
+            <form action="/auth" method="POST">
+                Username: <input type="text" name="username" id="usernameinput"><br>
+                Password: <input type="text" name="password" id="passwordinput"><br>
+                <button type="submit">Login</button>
+            </form>
+        </center>
 
-    <br><br>
+        <br><br>
 
-    <text style="font-size:30px">The SQL Command</text>
+        <text style="font-size:30px">The SQL Command</text>
 
-    <br><br>
+        <br><br>
 
-    <text style="font-size:20px;font-family:Lucida Console">SELECT</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">CASE</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">WHEN COUNT (name) >= 1 THEN CAST (1 AS BIT)</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">ELSE</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">CAST (0 AS BIT)</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">END AS isItValid</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">FROM users WHERE users.name =</text>
+        <text style="font-size:20px;font-family:Lucida Console">SELECT</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">CASE</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">WHEN COUNT (name) >= 1 THEN CAST (1 AS BIT)</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">ELSE</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">CAST (0 AS BIT)</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">END AS isItValid</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">FROM users WHERE users.name =</text>
 
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">'</text>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:0px;color:red" id="user"></text>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:00px">'</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">AND users.pwd =</text>
-    <br>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">'</text>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:0px;color:red" id="pass"></text>
-    <text style="font-size:20px;font-family:Lucida Console;margin-left:0px">'</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">'</text>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:0px;color:red" id="user"></text>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:00px">'</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">AND users.pwd =</text>
+        <br>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">'</text>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:0px;color:red" id="pass"></text>
+        <text style="font-size:20px;font-family:Lucida Console;margin-left:0px">'</text>
 
-    <script src="../static/showSQLcmd.js"></script>
-</body>
-</html>
+        <script src="../static/showSQLcmd.js"></script>
+    </body>
+    </html>
