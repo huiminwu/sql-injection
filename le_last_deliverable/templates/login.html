@@ -2,21 +2,63 @@
 <html>
   <head>
     <title>SQL Injection</title>
-    <h1 style="text-align:center">SQL Injection (by Period 8's Team uWu)</h1>
+    <h1 style="text-align:center;margin-bottom:0px">SQL Injection (by Period 8's Team uWu)</h1>
+    <h4 style="text-align:center;margin-top:0px">Hui Min Wu and Thomas Zhao</h4>
     <hr>
 
     <style>
     .question {
-        font-style:italic;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-align: center;
     }
 
+    .answer {
+        font-size: 18px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        padding-left: 80px;
+        padding-right: 80px;
+        text-align:justify;
+    }
     </style>
   </head>
   <body>
 
       <p class="question">
-          Yeet ahdhskajnasd
+          Hey uWu, what is SQL Injection?
       </p>
+      <p class="answer">
+          SQL Injection is the act of "injecting" SQL queries to manipulate web applications. These are important to guard against because they
+          are an ubiquitous attack on the Interwebs due to their relative simplicity to perform, and the volume of web applications that are
+          vulnerable to said attack. SQL Injection attacks thrive on text input fields, which nowadays the majority of websites possess.
+          Text input fields are generally connected to a database so that the input can somehow be used to procure some sort of result. One
+          would use SQL code to access and compare the input and stored data in the database. If someone typed in SQL code as the input (hence
+          "SQL Injection"), it could potentially alter the original SQL query into a malicious one capable of performing whatever action the
+          attacker sees fit.
+      </p>
+
+      <p class="question">
+          Hmm, interesting. I still don't see how bad SQL Injection can be though.
+      </p>
+      <p class="answer">
+          Giving attackers the potential to gain unparalleled power in YOUR web application? That is terrible and is something that should
+          never happen. Though severity varies depending on how the SQL backend code is structured, just the mere thought of a foreign
+          entity being able to access YOUR web application, use it to their benefit, and even destroy it should scare you. If you are still
+          not convinced, potential consequences of negligence are:
+          <ul style="font-size:17px;margin-bottom:30px;padding-left:120px">
+              <li>Modify database information (and destroy integrity of your web application!)</li>
+              <li>Gain administrative priviledges (and even usurp your throne!)</li>
+              <li>Delete entire database tables or corrupt data (sound bad yet?)</li>
+              <li>Attack other related online services one provides (and bring your empire crashing down!)</li>
+              <li>Procure sensetive information (and now your secrets are exposed!)</li>
+              <li>Destroy even backup files (so you are done for... no coming back from this)</li>
+          </ul>
+      </p>
+
+      
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
