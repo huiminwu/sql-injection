@@ -77,6 +77,10 @@
 <body>
 
     <p class="question">
+        THERE WILL BE A TABLE OF CONTENTS HERE MWAHAHAHA THANK YOU
+    </p>
+
+    <p class="question">
         Hey uWu, what is SQL Injection?
     </p>
     <p class="answer">
@@ -192,6 +196,78 @@
         </ul>
     </p>
 
+    <p class="question">
+        Amazing. Are there different types of SQL Injection attacks or something?
+    </p>
+    <p class="answer">
+        I'm glad you asked! SQL Injection attacks number very high, and there can therefore be many types of SQL Injection attacks.
+        However, we have distinguished three main types for you today: error-based, union-based, and inferential (a.k.a. blind).
+    </p>
+
+    <p class="question">
+        Error-based attacks, huh? Sounds cool. What is it?
+    </p>
+    <p class="answer">In error-based SQL Injection attacks, the primary goal of the attacker is to flush out weakpoints in the code design by purposefully
+        typing in bad input. In doing so, the program may be forced to throw out an error due to a lack of parameter sanization. When this happens,
+        the attacker can usually glean information about the program's backend and becomes more knowledgable in hacking the program.
+    </p>
+
+    <p class="question">
+        Hmm, I see. What about union-based attacks? Does it use nuclear fusion or something?
+    </p>
+    <p class="answer">
+        Nah, though it would be amazing if there were fusion-powered hacking efforts (or maybe not, depending on your perspective).
+        Union-based attacks is all about adding additonal queries to the existing query in the program. This is a very powerful attack if it is not
+        caught by the programmer's code it gives the attacker essentially free reign over the application by appending any additional queries the attacker wishes.
+        Some possible appendations include: insert, delete, and select.
+    </p>
+
+    <p class="question">
+        Muy interesante! The best for last, eh? Tell me about inferential (a.k.a. blind) attacks!
+    </p>
+    <p class="answer">
+        Inferential SQL Injection attacks are off the premise that the programmer has supressed detailed error messages but has not
+        dealt with the underlying issue; only merely hiding it. Attackers no longer have long details from the error, but they can still
+        glean information from the little errors that the program will show. Inferential SQL Injection is based off of a series of true/false
+        questions. Attackers can input a comparison ('1' = '1') or a time delay ( sleep() function) and they can thereby glean the results
+        of these true/false inquiries, procuring knowledge on the program's structure.
+    </p>
+
+    <p class="question">
+        Dang. How will I ever be able to stop these attacks? They seem so powerful!
+    </p>
+    <p class="answer">
+        SQL Injections can be powerful weapons against those who are negligent and not cautious. But you are not that person anymore
+        (no clue if you were to begin with, but doesn't matter!). Because you do not want SQL Injections to have the possible effects
+        that they could, here is what you can do to prevent (or at least, lessen the impact of) SQL Injection attacks.
+
+        <ul class="answer-list">
+            <li id="prevent-1">
+                <div class="tooltip">
+                    Sanitize user input first.
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="prevent-2">
+                <div class="tooltip">
+                    Use parameters rather than building SQL command explicitly.
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="prevent-3">
+                <div class="tooltip">
+                    Avoid dynamic SQL code as much as possible.
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+            <li id="prevent-4">
+                <div class="tooltip">
+                    Hide your error messages from the outside world.
+                    <span class="tooltiptext">Skirt skirttt</span>
+                </div>
+            </li>
+        </ul>
+    </p>
 
         {% with messages = get_flashed_messages() %}
         {% if messages %}
