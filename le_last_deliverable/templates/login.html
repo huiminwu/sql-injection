@@ -2,7 +2,7 @@
 <!-- saved from url=(0066)file:///C:/Users/Thomas/Desktop/sql-injection/templates/login.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>SQL Injection</title>
-    </head><body><h1 style="text-align:center;margin-bottom:0px">SQL Injection (by Period 8's Team uWu)</h1>
+</head><body><h1 style="text-align:center;margin-bottom:0px">SQL Injection (by Period 8's Team uWu)</h1>
     <h4 style="text-align:center;margin-top:0px">Hui Min Wu and Thomas Zhao</h4>
     <hr>
 
@@ -30,7 +30,7 @@
         padding-left: 120px;
     }
 
-    .demo_1 {
+    .demo {
         font-size: 20px;
         font-family: Lucida Console;
     }
@@ -106,45 +106,45 @@
         never happen. Though severity varies depending on how the SQL backend code is structured, just the mere thought of a foreign
         entity being able to access YOUR web application, use it to their benefit, and even destroy it should scare you. If you are still
         not convinced, potential consequences of negligence are:
-        </p><ul class="answer-list">
+    </p><ul class="answer-list">
 
-            <li id="consequence-1">
-                <div class="tooltip">
-                    Modify database information (and destroy integrity of your web application!).
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="consequence-2">
-                <div class="tooltip">
-                    Gain administrative priviledges (and even usurp your throne!).
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="consequence-3">
-                <div class="tooltip">
-                    Delete entire database tables or corrupt data (sound bad yet?).
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="consequence-4">
-                <div class="tooltip">
-                    Attack other related online services one provides (and bring your empire crashing down!).
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="consequence-5">
-                <div class="tooltip">
-                    Procure sensitive information (and now your secrets are exposed!)
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="consequence-6">
-                <div class="tooltip">
-                    Destroy even backup files (you are so done for... no coming back from this).
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-        </ul>
+        <li id="consequence-1">
+            <div class="tooltip">
+                Modify database information (and destroy integrity of your web application!).
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="consequence-2">
+            <div class="tooltip">
+                Gain administrative priviledges (and even usurp your throne!).
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="consequence-3">
+            <div class="tooltip">
+                Delete entire database tables or corrupt data (sound bad yet?).
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="consequence-4">
+            <div class="tooltip">
+                Attack other related online services one provides (and bring your empire crashing down!).
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="consequence-5">
+            <div class="tooltip">
+                Procure sensitive information (and now your secrets are exposed!)
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="consequence-6">
+            <div class="tooltip">
+                Destroy even backup files (you are so done for... no coming back from this).
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+    </ul>
     <p></p>
 
     <p class="question">
@@ -154,29 +154,29 @@
         Well, you see, you don't know for sure. But it is likely because again SQL Injection attacks are extremely common on the
         Interwebs. However, there are some factors that will put you more at risk than others (some of which can control, some of
         which you cannot). Some factors that put you at a greater risk are listed below:
-        </p><ul class="answer-list">
+    </p><ul class="answer-list">
 
-            <li id="risk-1">
-                <div class="tooltip">
-                    Your business is more lucrative to attack (someone would rather attack MasterCard than, let's say, your SoftDev project).
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
+        <li id="risk-1">
+            <div class="tooltip">
+                Your business is more lucrative to attack (someone would rather attack MasterCard than, let's say, your SoftDev project).
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
 
-            <li id="risk-2">
-                <div class="tooltip">
-                    Your web application is large, but is not updated or patched often.
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
+        <li id="risk-2">
+            <div class="tooltip">
+                Your web application is large, but is not updated or patched often.
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
 
-            <li id="risk-3">
-                <div class="tooltip">
-                    There are insufficient checks on invalid user inputs that would prevent nefarious activities on your web application.
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-        </ul>
+        <li id="risk-3">
+            <div class="tooltip">
+                There are insufficient checks on invalid user inputs that would prevent nefarious activities on your web application.
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+    </ul>
     <p></p>
 
     <p class="question">
@@ -185,20 +185,20 @@
     <p class="answer">
         Why, of course! Otherwise, why would we stress the dangers of succumbing to SQL Injection? There have been numerous examples
         down the long roads of history; here are a couple of notable cases that have emerged in (relatively) recent years.
-        </p><ul class="answer-list">
-            <li id="past-1">
-                <div class="tooltip">
-                    "Largest Ever Hacking Fraud Case", 2013
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="past-2">
-                <div class="tooltip">
-                    "Lauri Love", 2013
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-        </ul>
+    </p><ul class="answer-list">
+        <li id="past-1">
+            <div class="tooltip">
+                "Largest Ever Hacking Fraud Case", 2013
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="past-2">
+            <div class="tooltip">
+                "Lauri Love", 2013
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+    </ul>
     <p></p>
 
     <p class="question">
@@ -246,32 +246,32 @@
         (no clue if you were to begin with, but doesn't matter!). Because you do not want SQL Injections to have the possible effects
         that they could, here is what you can do to prevent (or at least, lessen the impact of) SQL Injection attacks.
 
-        </p><ul class="answer-list">
-            <li id="prevent-1">
-                <div class="tooltip">
-                    Sanitize user input first.
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="prevent-2">
-                <div class="tooltip">
-                    Use parameters rather than building SQL command explicitly.
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="prevent-3">
-                <div class="tooltip">
-                    Avoid dynamic SQL code as much as possible.
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-            <li id="prevent-4">
-                <div class="tooltip">
-                    Hide your error messages from the outside world.
-                    <span class="tooltiptext">Skirt skirttt</span>
-                </div>
-            </li>
-        </ul>
+    </p><ul class="answer-list">
+        <li id="prevent-1">
+            <div class="tooltip">
+                Sanitize user input first.
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="prevent-2">
+            <div class="tooltip">
+                Use parameters rather than building SQL command explicitly.
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="prevent-3">
+            <div class="tooltip">
+                Avoid dynamic SQL code as much as possible.
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+        <li id="prevent-4">
+            <div class="tooltip">
+                Hide your error messages from the outside world.
+                <span class="tooltiptext">Skirt skirttt</span>
+            </div>
+        </li>
+    </ul>
     <p></p>
 
     <p class="question">
@@ -304,7 +304,7 @@
         {% endwith %}
     </p>
     <center>
-        <form action="file:///C:/auth" method="POST">
+        <form action="/auth" method="POST">
             Username: <input type="text" name="username" id="usernameinput"><br>
             Password: <input type="text" name="password" id="passwordinput"><br>
             <button type="submit">Login</button>
@@ -317,7 +317,7 @@
 
     <br><br>
 
-    <div class="demo_1">
+    <div class="demo">
         <text style="margin-left:80px">SELECT</text>
         <br>
         <text style="margin-left:120px">CASE</text>
@@ -345,7 +345,67 @@
     </div>
     <br><br><br>
 
-    <script src="file:///C:/Users/Thomas/Desktop/sql-injection/static/showSQLcmd.js"></script>
+    <p class="question">
+        Dang. That's fascinating but scary simutaneously. May I have another example?
+    </p>
+    <p class="answer">
+        Glad you asked. Here is an example. This search box will allow you to search things in only the table known as
+        <i>public_info</i>. The only two searchable items are the terms "airpods" and "iPhone". Go ahead, try it.
+    </p>
+    <p class="answer">
+        Say you know that there is a table called <i>classified</i> and you would like to see its contents. But the search
+        query programmed into the search box only searches through the <i>public_info</i> table. We can input the following
+        into the search input to procure data from the <i>classified</i> table:
+    </p>
+    <p class="answer">
+        <i>' UNION SELECT * FROM classified--</i>
+    </p>
+    <p class="answer">
+        What this does is that it combines the results from the two select statements. Because we specified that we
+        would like to see everything in <i>classified</i>, we combined the program's select statement with our own
+        select statement through the UNION operator. The two hyphens comment out the extra SQL code.
+    </p>
+
+    <text style="font-size:30px;margin-left:80px">The SQL Command</text>
+    <br><br>
+
+    <div class="demo">
+        <text style="margin-left:80px">SELECT * from public_info WHERE file_name LIKE '</text>
+        <text style="margin-left:0px;color:red" id="search_term"></text>
+        <text style="margin-left:-10px">%  '</text>
+    </div>
+
+    <p style="text-align:center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </p>
+
+    <center>
+        <form action="/auth_2" method="POST">
+            <input type="text" name="search" id="searchinput">
+            <button type="submit">Search!</button>
+        </form>
+    </center>
+
+    <br><br><br>
+
+    <p class="question">
+        Thank you for introducing to me the basic concepts behind SQL Injection.
+    </p>
+    <p class="answer">
+        You are very welcome. Hope that great learnation occurred in the time spent together. SQL Injection is a very
+        real threat to many web applications, and it is imperative that one safeguards programs from this. Team uWu, signing off.
+    </p>
+
+    <br><br><br>
+
+    <script src="static/showSQLcmd.js"></script>
 
 
-</body></html>
+</body>
+</html>

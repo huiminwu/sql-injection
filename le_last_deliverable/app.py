@@ -8,7 +8,9 @@ app.secret_key=os.urandom(32)
 
 db = sqlite3.connect(DB_FILE)
 c = db.cursor()
-c.execute("CREATE TABLE IF NOT EXISTS users (name TEXT, pwd TEXT)")
+c.execute("CREATE TABLE IF NOT EXISTS users (name TEXT PRIMARY KEY, pwd TEXT)")
+c.execute("CREATE TABLE IF NOT EXISTS classified (file_name TEXT PRIMARY KEY, description TEXT)")
+c.execute("CREATE TABLE IF NOT EXISTS public_info (file_name TEXT PRIMARY KEY, description TEXT)")
 db.commit()
 db.close()
 
@@ -31,6 +33,21 @@ def auth():
             return redirect(url_for('index'))
     flash("Try again!")
     return redirect(url_for('index'))
+
+@app.route('/auth_2', methods = ['POST'])
+def auth_2():
+    givenSearch=request.form["search"]
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='public_info';")
+    fetched = c.fetchall()
+
+    c.execute("SELECT * from public_info WHERE file_name LIKE '" + givenSearch + "%'")
+    fetched = c.fetchall()
+
+    flash("Your search returned " + str(fetched))
+    return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.debug = True

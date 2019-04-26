@@ -20,3 +20,12 @@ usernameinput.addEventListener("input", function(e){
 passwordinput.addEventListener("input", function(e){
     password.innerHTML = passwordinput.value
 });
+
+// THE SECOND DEMO
+var search = document.getElementById("search_term");
+var searchinput = document.getElementById("searchinput");
+
+searchinput,addEventListener("input", function(e){
+    console.log(e);
+    search.innerHTML = searchinput.value
+});
