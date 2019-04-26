@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, session, url_for, redirect, f
 import os
 import sqlite3
 
-DB_FILE = "data/database.db"
+DB_FILE = "/var/www/sqli/sqli/data/database.db"
 app = Flask(__name__)
 app.secret_key=os.urandom(32)
 
@@ -34,4 +34,4 @@ def auth():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host='142.93.206.174')
