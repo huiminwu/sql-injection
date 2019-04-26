@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!-- saved from url=(0066)file:///C:/Users/Thomas/Desktop/sql-injection/templates/login.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>SQL Injection</title>
-</head><body><h1 style="text-align:center;margin-bottom:0px">SQL Injection (by Period 8's Team uWu)</h1>
+</head>
+<body>
+    <h1 style="text-align:center;margin-bottom:0px">SQL Injection (by Period 8's Team uWu)</h1>
     <h4 style="text-align:center;margin-top:0px">Hui Min Wu and Thomas Zhao</h4>
     <hr>
 
@@ -60,7 +64,7 @@
     /* Show the tooltip text when you mouse over the tooltip container */
     .tooltip:hover .tooltiptext {
         visibility: visible;
-        width: 120px;
+        width: 200px;
         bottom: 100%;
         left: 50%;
         margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
@@ -79,13 +83,26 @@
 
     </style>
 
+    <div style="text-align:center">
+        <h3> TABLE OF CONTENTS </h3>
+        <a href="#q1">What is SQL Injection?</a><br>
+        <a href="#q2">Dangers of SQL Injection</a><br>
+        <a href="#q3">What makes you prone to SQL Injection?</a><br>
+        <a href="#q4">Past examples of SQL Injection</a><br>
+        <a href="#q5">Introducing the three types of SQL Injection</a><br>
+        <a href="#q6">Error-based</a><br>
+        <a href="#q7">Union-based</a><br>
+        <a href="#q8">Inferential (a.k.a. blind)</a><br>
+        <a href="#q9">Prevention</a><br>
+        <a href="#q10">Demo 1</a><br>
+        <a href="#q11">Demo 2</a><br>
+        <a href=#q12>Signing off</a><br>
+    </div>
 
+    <br>
+    <hr>
 
-    <p class="question">
-        THERE WILL BE A TABLE OF CONTENTS HERE MWAHAHAHA THANK YOU
-    </p>
-
-    <p class="question">
+    <p class="question" id="q1">
         Hey uWu, what is SQL Injection?
     </p>
     <p class="answer">
@@ -98,7 +115,7 @@
         attacker sees fit.
     </p>
 
-    <p class="question">
+    <p class="question" id="q2">
         Hmm, interesting. I still don't see how bad SQL Injection can be though.
     </p>
     <p class="answer">
@@ -110,44 +127,44 @@
 
         <li id="consequence-1">
             <div class="tooltip">
-                Modify database information (and destroy integrity of your web application!).
-                <span class="tooltiptext">Skirt skirttt</span>
+                Modify database information.
+                <span class="tooltiptext">And destroy the integrity of your web application!</span>
             </div>
         </li>
         <li id="consequence-2">
             <div class="tooltip">
-                Gain administrative priviledges (and even usurp your throne!).
-                <span class="tooltiptext">Skirt skirttt</span>
+                Gain administrative priviledges.
+                <span class="tooltiptext">Really bad. They could usurp your throne.</span>
             </div>
         </li>
         <li id="consequence-3">
             <div class="tooltip">
-                Delete entire database tables or corrupt data (sound bad yet?).
-                <span class="tooltiptext">Skirt skirttt</span>
+                Delete entire database tables or corrupt data.
+                <span class="tooltiptext">Again, destroying your web application's precious integrity.</span>
             </div>
         </li>
         <li id="consequence-4">
             <div class="tooltip">
-                Attack other related online services one provides (and bring your empire crashing down!).
-                <span class="tooltiptext">Skirt skirttt</span>
+                Attack other related online services one provides.
+                <span class="tooltiptext">And bring your empire crashing down!</span>
             </div>
         </li>
         <li id="consequence-5">
             <div class="tooltip">
-                Procure sensitive information (and now your secrets are exposed!)
-                <span class="tooltiptext">Skirt skirttt</span>
+                Procure sensitive information.
+                <span class="tooltiptext">And discover your secrets!</span>
             </div>
         </li>
         <li id="consequence-6">
             <div class="tooltip">
-                Destroy even backup files (you are so done for... no coming back from this).
-                <span class="tooltiptext">Skirt skirttt</span>
+                Destroy even backup files.
+                <span class="tooltiptext">You're so done for if it comes to this.</span>
             </div>
         </li>
     </ul>
     <p></p>
 
-    <p class="question">
+    <p class="question" id="q3">
         Okay, that sounds pretty terrifying. How do I know if I'll be attacked?
     </p>
     <p class="answer">
@@ -158,28 +175,28 @@
 
         <li id="risk-1">
             <div class="tooltip">
-                Your business is more lucrative to attack (someone would rather attack MasterCard than, let's say, your SoftDev project).
-                <span class="tooltiptext">Skirt skirttt</span>
+                Your business is more lucrative to attack.
+                <span class="tooltiptext">Someone would rather attack MasterCard than, let's say, your SoftDev project.</span>
             </div>
         </li>
 
         <li id="risk-2">
             <div class="tooltip">
                 Your web application is large, but is not updated or patched often.
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">This leads to vulnerablities that can be exploited.</span>
             </div>
         </li>
 
         <li id="risk-3">
             <div class="tooltip">
                 There are insufficient checks on invalid user inputs that would prevent nefarious activities on your web application.
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">Without checks/sanitization, users can enter in potentially malicious input.</span>
             </div>
         </li>
     </ul>
     <p></p>
 
-    <p class="question">
+    <p class="question" id="q4">
         Wow. Just wow. Has this attack been successful in years past?
     </p>
     <p class="answer">
@@ -189,19 +206,19 @@
         <li id="past-1">
             <div class="tooltip">
                 "Largest Ever Hacking Fraud Case", 2013
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">info here</span>
             </div>
         </li>
         <li id="past-2">
             <div class="tooltip">
                 "Lauri Love", 2013
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">info here</span>
             </div>
         </li>
     </ul>
     <p></p>
 
-    <p class="question">
+    <p class="question" id="q5">
         Amazing. Are there different types of SQL Injection attacks or something?
     </p>
     <p class="answer">
@@ -209,7 +226,7 @@
         However, we have distinguished three main types for you today: error-based, union-based, and inferential (a.k.a. blind).
     </p>
 
-    <p class="question">
+    <p class="question" id="q6">
         Error-based attacks, huh? Sounds cool. What is it?
     </p>
     <p class="answer">In error-based SQL Injection attacks, the primary goal of the attacker is to flush out weakpoints in the code design by purposefully
@@ -217,7 +234,7 @@
         the attacker can usually glean information about the program's backend and becomes more knowledgable in hacking the program.
     </p>
 
-    <p class="question">
+    <p class="question" id="q7">
         Hmm, I see. What about union-based attacks? Does it use nuclear fusion or something?
     </p>
     <p class="answer">
@@ -227,7 +244,7 @@
         Some possible appendations include: insert, delete, and select.
     </p>
 
-    <p class="question">
+    <p class="question" id="q8">
         Muy interesante! The best for last, eh? Tell me about inferential (a.k.a. blind) attacks!
     </p>
     <p class="answer">
@@ -238,7 +255,7 @@
         of these true/false inquiries, procuring knowledge on the program's structure.
     </p>
 
-    <p class="question">
+    <p class="question" id="q9">
         Dang. How will I ever be able to stop these attacks? They seem so powerful!
     </p>
     <p class="answer">
@@ -250,31 +267,31 @@
         <li id="prevent-1">
             <div class="tooltip">
                 Sanitize user input first.
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">This way, potentially malicious code will be blocked from going through.</span>
             </div>
         </li>
         <li id="prevent-2">
             <div class="tooltip">
                 Use parameters rather than building SQL command explicitly.
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">Parameters help safeguard against unintended consequences of some inputs.</span>
             </div>
         </li>
         <li id="prevent-3">
             <div class="tooltip">
-                Avoid dynamic SQL code as much as possible.
-                <span class="tooltiptext">Skirt skirttt</span>
+                Avoid dynamic SQL code as much as possible (building SQL code piece by piece).
+                <span class="tooltiptext">Building the command explicitly is highly vulnerable because each piece of the command can potentially be manipulated.</span>
             </div>
         </li>
         <li id="prevent-4">
             <div class="tooltip">
                 Hide your error messages from the outside world.
-                <span class="tooltiptext">Skirt skirttt</span>
+                <span class="tooltiptext">Hiding these things will make it harder for attackers to know your backend structure, and therefore harder to hack.</span>
             </div>
         </li>
     </ul>
     <p></p>
 
-    <p class="question">
+    <p class="question" id="q10">
         Wowzers. Can I see an example of this?
     </p>
     <p class="answer">
@@ -317,7 +334,7 @@
 
     <br><br>
 
-    <div class="demo">
+    <div class="demo" id="q11">
         <text style="margin-left:80px">SELECT</text>
         <br>
         <text style="margin-left:120px">CASE</text>
@@ -394,7 +411,7 @@
 
     <br><br><br>
 
-    <p class="question">
+    <p class="question" id="q12">
         Thank you for introducing to me the basic concepts behind SQL Injection.
     </p>
     <p class="answer">
