@@ -30,6 +30,11 @@
         padding-left: 120px;
     }
 
+    .demo_1 {
+        font-size: 20px;
+        font-family: Lucida Console;
+    }
+
     /* Tooltip container */
     .tooltip {
         position: relative;
@@ -269,6 +274,27 @@
         </ul>
     </p>
 
+    <p class="question">
+        Wowzers. Can I see an example of this?
+    </p>
+    <p class="answer">
+        Sure. Have a look below. Here, the backend code of the SQL query is displayed to help understanding
+        of why the application behaves the way it does. Notice how when you type in input, there is JavaScript that will update the
+        SQL command to reflect what goes into the program. The only user on this is the administrator with the username and password of
+        <i>admin</i> and <i>password</i>, respectively. You can definitely login with that pair of username and password. But, obviously, you are not going to know what the user credentials
+        are.
+    </p>
+    <p class="answer">
+        Now, try typing in the following: <i> ' OR '1' = '1'-- </i> as the username and anything as the password.
+    </p>
+    <p class="answer">
+        As you can see, that works too! What this input effectively does is that it closes the first single quote, and creates an "or"
+        statement that is always true ('1' is always equal to '1'). The double hyphens at the end is SQL's syntax for a comment; it will
+        comment out any SQL code that comes after it. So you are effectively left with a SQL query that will register as true, thereby
+        bypassing the login system.
+    </p>
+
+    <p style="text-align:center">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -276,45 +302,49 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-        <center>
-            <form action="/auth" method="POST">
-                Username: <input type="text" name="username" id="usernameinput"><br>
-                Password: <input type="text" name="password" id="passwordinput"><br>
-                <button type="submit">Login</button>
-            </form>
-        </center>
+    </p>
+    <center>
+        <form action="/auth" method="POST">
+            Username: <input type="text" name="username" id="usernameinput"><br>
+            Password: <input type="text" name="password" id="passwordinput"><br>
+            <button type="submit">Login</button>
+        </form>
+    </center>
 
-        <br><br>
+    <br><br>
 
-        <text style="font-size:30px">The SQL Command</text>
+    <text style="font-size:30px;margin-left:80px">The SQL Command</text>
 
-        <br><br>
+    <br><br>
 
-        <text style="font-size:20px;font-family:Lucida Console">SELECT</text>
+    <div class="demo_1">
+        <text style="margin-left:80px">SELECT</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">CASE</text>
+        <text style="margin-left:120px">CASE</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">WHEN COUNT (name) >= 1 THEN CAST (1 AS BIT)</text>
+        <text style="margin-left:160px">WHEN COUNT (name) >= 1 THEN CAST (1 AS BIT)</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">ELSE</text>
+        <text style="margin-left:120px">ELSE</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">CAST (0 AS BIT)</text>
+        <text style="margin-left:160px">CAST (0 AS BIT)</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">END AS isItValid</text>
+        <text style="margin-left:120px">END AS isItValid</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">FROM users WHERE users.name =</text>
+        <text style="margin-left:120px">FROM users WHERE users.name =</text>
 
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">'</text>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:0px;color:red" id="user"></text>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:00px">'</text>
+        <text style="margin-left:160px">'</text>
+        <text style="margin-left:80px;color:red" id="user"></text>
+        <text style="margin-left:80px">'</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:40px">AND users.pwd =</text>
+        <text style="margin-left:120px">AND users.pwd =</text>
         <br>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:80px">'</text>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:0px;color:red" id="pass"></text>
-        <text style="font-size:20px;font-family:Lucida Console;margin-left:0px">'</text>
+        <text style="margin-left:160px">'</text>
+        <text style="margin-left:80px;color:red" id="pass"></text>
+        <text style="margin-left:80px">'</text>
+    </div>
+    <br><br><br>
 
-        <script src="../static/showSQLcmd.js"></script>
-    </body>
-    </html>
+    <script src="../static/showSQLcmd.js"></script>
+</body>
+</html>
