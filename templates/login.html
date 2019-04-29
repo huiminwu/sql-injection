@@ -80,12 +80,22 @@
     </style>
 </head>
 <body>
-
-    <p class="question">
-        THERE WILL BE A TABLE OF CONTENTS HERE MWAHAHAHA THANK YOU
-    </p>
-
-    <p class="question">
+	<h3> Table of Contents </h3>
+    <ul>
+	    <li><a href="#what">What is SQL Injection</a></li>
+	    <li><a href="#bad">How bad can SQL Injection be?</a></li>
+	    <li><a href="#attack">What puts me at risk?</a></li>
+	    <li><a href="#history">Why should I care about the risks?</a></li>
+	    <li><a href="#type">What are the types of SQL Injection?</a></li>
+	    	<ul>
+	    	<li><a href="#error">Error-Based</a></li>
+		<li><a href="#union">Union-Based</a></li>
+		<li><a href="#blind">Blind/Inferential</a></li>
+		</ul>
+	    <li><a href="#prevent">How can I prevent this?</a></li>
+	    <li><a href="demo">Demo</a></li>
+    </ul>
+    <p class="question" id="what">
         Hey uWu, what is SQL Injection?
     </p>
     <p class="answer">
@@ -101,7 +111,7 @@
     <p class="question">
         Hmm, interesting. I still don't see how bad SQL Injection can be though.
     </p>
-    <p class="answer">
+    <p class="answer" id="bad">
         Giving attackers the potential to gain unparalleled power in YOUR web application? That is terrible and is something that should
         never happen. Though severity varies depending on how the SQL backend code is structured, just the mere thought of a foreign
         entity being able to access YOUR web application, use it to their benefit, and even destroy it should scare you. If you are still
@@ -147,7 +157,7 @@
         </ul>
     </p>
 
-    <p class="question">
+    <p class="question" id="attack">
         Okay, that sounds pretty terrifying. How do I know if I'll be attacked?
     </p>
     <p class="answer">
@@ -179,7 +189,7 @@
         </ul>
     </p>
 
-    <p class="question">
+    <p class="question" id="history">
         Wow. Just wow. Has this attack been successful in years past?
     </p>
     <p class="answer">
@@ -201,7 +211,7 @@
         </ul>
     </p>
 
-    <p class="question">
+    <p class="question" id="types">
         Amazing. Are there different types of SQL Injection attacks or something?
     </p>
     <p class="answer">
@@ -209,7 +219,7 @@
         However, we have distinguished three main types for you today: error-based, union-based, and inferential (a.k.a. blind).
     </p>
 
-    <p class="question">
+    <p class="question" id="error">
         Error-based attacks, huh? Sounds cool. What is it?
     </p>
     <p class="answer">In error-based SQL Injection attacks, the primary goal of the attacker is to flush out weakpoints in the code design by purposefully
@@ -217,7 +227,7 @@
         the attacker can usually glean information about the program's backend and becomes more knowledgable in hacking the program.
     </p>
 
-    <p class="question">
+    <p class="question" id="union">
         Hmm, I see. What about union-based attacks? Does it use nuclear fusion or something?
     </p>
     <p class="answer">
@@ -227,7 +237,7 @@
         Some possible appendations include: insert, delete, and select.
     </p>
 
-    <p class="question">
+    <p class="question" id="blind">
         Muy interesante! The best for last, eh? Tell me about inferential (a.k.a. blind) attacks!
     </p>
     <p class="answer">
@@ -238,7 +248,7 @@
         of these true/false inquiries, procuring knowledge on the program's structure.
     </p>
 
-    <p class="question">
+    <p class="question" id="prevent">
         Dang. How will I ever be able to stop these attacks? They seem so powerful!
     </p>
     <p class="answer">
@@ -274,7 +284,7 @@
         </ul>
     </p>
 
-    <p class="question">
+    <p class="question" id="demo">
         Wowzers. Can I see an example of this?
     </p>
     <p class="answer">
